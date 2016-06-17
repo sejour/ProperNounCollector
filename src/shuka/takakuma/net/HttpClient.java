@@ -38,4 +38,36 @@ public class HttpClient {
             e.printStackTrace();
         }
 	}
+
+	public static String getString(String urlString) {
+		StringBuilder builder = new StringBuilder();
+
+		try {
+            URL url = new URL(urlString);
+            HttpURLConnection connection = null;
+
+            try {
+                connection = (HttpURLConnection) url.openConnection();
+                connection.setRequestMethod("GET");
+                connection.getResponseCode();
+
+                try (InputStreamReader isr = new InputStreamReader(connection.getInputStream(), StandardCharsets.UTF_8);
+                		BufferedReader reader = new BufferedReader(isr)) {
+                	String line;
+                	while ((line = reader.readLine()) != null) {
+                		builder.append(line);
+                	}
+                }
+            } finally {
+                if (connection != null) {
+                    connection.disconnect();
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+		return builder.toString();
+	}
+
 }
