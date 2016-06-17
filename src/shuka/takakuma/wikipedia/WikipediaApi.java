@@ -23,6 +23,7 @@ public class WikipediaApi {
 		Map<String, String> params = new HashMap<String, String>();
 		params.put("action", "query");
 		params.put("prop", "categories");
+		params.put("cllimit", "100");
 		params.put("titles", URLEncoder.encode(title, "utf-8"));
 
 		ObjectMapper mapper = new ObjectMapper();
@@ -45,7 +46,6 @@ public class WikipediaApi {
 	public static String get(Map<String, String> params) {
 		String query = generateQuery(params);
 		String url = baseUrl + query;
-		System.out.println("[URL] " + url);
 
 		return HttpClient.getString(url);
 	}
