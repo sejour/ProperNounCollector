@@ -10,7 +10,7 @@ public class ProperNounCollector {
 
 	public static void main(String[] args) {
 		ProperNounCollector pnc = new ProperNounCollector();
-		pnc.collect("https://ja.wikipedia.org/wiki/ファッションブランド一覧");
+		pnc.collect("https://ja.wikipedia.org/wiki/気象");
 		//https://ja.wikipedia.org/wiki/曲名一覧
 		//https://ja.wikipedia.org/wiki/Category:音楽のジャンル
 		//https://ja.wikipedia.org/wiki/新語・流行語大賞
@@ -25,6 +25,7 @@ public class ProperNounCollector {
 		//https://ja.wikipedia.org/wiki/日本の記念日一覧
 		//https://ja.wikipedia.org/wiki/超高層ビルの一覧
 		//https://ja.wikipedia.org/wiki/ファッションブランド一覧
+		//https://ja.wikipedia.org/wiki/気象
 	}
 
 	public ProperNounCollector() {
